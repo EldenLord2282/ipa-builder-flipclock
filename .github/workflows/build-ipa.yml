@@ -49,7 +49,7 @@ jobs:
 
       - name: Prebuild native iOS project
         working-directory: target/${{ inputs.app_dir }}
-        run: npx expo prebuild --platform ios --non-interactive
+        run: CI=1 npx expo prebuild --platform ios
 
       - name: Install CocoaPods dependencies
         working-directory: target/${{ inputs.app_dir }}/ios
